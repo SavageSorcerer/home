@@ -8,7 +8,7 @@
     z-index: 200;
 }
 body{
-    background-image: url("blurb.jpg");
+    background-image: url("blurry-mountains.png");
     background-attachment: fixed;
 }
 .infopanel-left{
@@ -103,4 +103,43 @@ span{
     padding-left: 10px;
     padding-right: 10px;
     text-align: justify;
+}
+
+.container-image-slideshow{
+    display: grid;
+}
+
+.left,.right{
+    width: 30px;
+    height: 30px;
+    align-self: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+
+.left:hover,.right:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    transform: scale(1.25);
+}
+
+.left{
+    justify-self: left;
+}
+
+.right{
+    justify-self: right;
+}
+
+.show{
+    display: block;
+}
+
+.hide{
+    display: none;
 }

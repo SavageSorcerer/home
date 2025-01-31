@@ -98,14 +98,40 @@
                 <h3>These are projects I'm currently working on or have worked on but are unfinished.</h3>
                 <hr>
                 <div style="margin-top: 40px;text-align: left;width: 80%;margin: auto;">
-                    <p style="font-size: larger">Topic and Sentiment Analysis</p>
-                    <p>Python</p>
-                    <img src="sentiproj.png" style="border-radius: 10px;" width="100%">
+                    <div class="projinfo">
+                        <h3>Telemetry v1.0</h3>
+                        <p>JS &ensp; Python &ensp; HTML &ensp; CSS</p>
+                        <p>Designing a telemetry system to monitor a rocket in flight</p>
+                    </div>
+                    <video autoplay="" loop="" controls="" width="100%" style="border-radius: 10px;">
+                    <source type="video/mp4" src="tele.mp4">
+                    </video>
+                </div>
+                <hr>
+                <div style="margin-top: 40px;text-align: left;width: 80%;margin: auto;">
+                    <div class="projinfo">
+                        <h3>Extended Classifier System</h3>
+                        <p>Java</p>
+                        <p>Designing an Extended Classifier System to analyse and predict stock movements</p>
+                    </div>
+                    <div class="container-image-slideshow">
+                        <img class="show" src="expanded.png" style="border-radius: 10px;" width="100%">
+                        <img class="hide" src="EERNXT.png" style="border-radius: 10px;" width="100%">
+                        <!-- <img class="hide" src="WrapperWalkThrough.png" style="border-radius: 10px;" width="100%"> -->
+                        <button class="left hide" onclick="leftClick(this, this.parentNode)">&#x2962;</button>
+                        <button class="right show" onclick="rightClick(this, this.parentNode)">&#x2964;</button>
+                    </div>
                 </div>
             </div>
             <div class="infopanel infopanel-right" style="text-align: center;">
                 <h2>Private / Personal Projects</h2>
                 <h3>Projects that don't have a front-end component, are proprietary or are locally stored and run offline</h3>
+                <hr>
+                <div style="margin-top: 40px;text-align: left;width: 80%;margin: auto;">
+                    <p style="font-size: larger">Topic and Sentiment Analysis</p>
+                    <p>Python</p>
+                    <img src="sentiproj.png" style="border-radius: 10px;" width="100%">
+                </div>
                 <hr>
                 <div style="margin-top: 40px;text-align: left;width: 80%;margin: auto;">
                     <p style="font-size: larger">Supervised Traffic Sign Recognition</p>
@@ -136,5 +162,47 @@
                 </div>
             </div>
         </div>
+        <script>
+            function rightClick(elem, parent){
+                
+                for(var i = 0; i < parent.children.length - 2; i++){
+                    if(parent.children[i].classList.contains('show')){
+                        parent.children[i].classList.toggle('show');
+                        parent.children[i].classList.toggle('hide');
+                        parent.children[i+1].classList.toggle('show');
+                        parent.children[i+1].classList.toggle('hide');
+                        if(parent.children[i+2].classList.contains("left")){
+                            elem.classList.toggle('show');
+                            elem.classList.toggle('hide');
+                        }
+                        if(parent.children[parent.children.length - 2].classList.contains('hide')){
+                            parent.children[parent.children.length - 2].classList.toggle('show');
+                            parent.children[parent.children.length - 2].classList.toggle('hide');                            
+                        }
+                        break;
+                    }
+                }
+            }
+
+            function leftClick(elem, parent){
+                for(var i = parent.children.length - 3; i >= 0 ; i--){
+                    if(parent.children[i].classList.contains('show')){
+                        parent.children[i].classList.toggle('show');
+                        parent.children[i].classList.toggle('hide');
+                        parent.children[i-1].classList.toggle('show');
+                        parent.children[i-1].classList.toggle('hide');
+                        if(i === 1){
+                            elem.classList.toggle('show');
+                            elem.classList.toggle('hide');
+                        }
+                        if(parent.children[parent.children.length - 1].classList.contains('hide')){
+                            parent.children[parent.children.length - 1].classList.toggle('show');
+                            parent.children[parent.children.length - 1].classList.toggle('hide');                            
+                        }
+                        break;
+                    }
+                }
+            }
+        </script>
     </body>
 </html>
